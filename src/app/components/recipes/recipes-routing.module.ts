@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from 'src/app/shared/services/auth-guard.service';
+import { AuthGuard } from 'src/app/components/auth/auth.guard';
 import { RecipeResolverService } from 'src/app/components/recipes/recipes-resolver.service';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';

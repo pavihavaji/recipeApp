@@ -12,10 +12,10 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { RecipeService } from './components/recipes/recipe.service';
 import { AuthComponent } from './components/auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
-import { AuthInterceptorService } from './shared/auth-interceptor.service';
+import { AuthInterceptorService } from './components/auth/auth-interceptor.service';
 import { AlertComponent } from './shared/alert/alert.component';
 import { PlaceHolderDirective } from './shared/placeholder.directive';
-import { RecipeModule } from './components/recipes/recipes.module';
+import { RecipesModule } from './components/recipes/recipes.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,6 @@ import { RecipeModule } from './components/recipes/recipes.module';
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
-
     AuthComponent,
     LoadingSpinnerComponent,
     AlertComponent,
@@ -36,7 +35,7 @@ import { RecipeModule } from './components/recipes/recipes.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RecipeModule,
+    RecipesModule,
   ],
   providers: [
     RecipeService,

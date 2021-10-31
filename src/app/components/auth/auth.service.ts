@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, tap } from 'rxjs/operators';
 import { BehaviorSubject, Subject, throwError } from 'rxjs';
-import { User } from '../user.model';
+import { User } from './user.model';
 import { Router } from '@angular/router';
 
 export interface AuthResponseData {
@@ -73,7 +73,7 @@ export class AuthService {
       email: string;
       id: string;
       _token: string;
-      _tokenExpirationData: string; //will get this back as a string
+      _tokenExpirationDate: string; //will get this back as a string
     } = JSON.parse(localStorage.getItem('userData'));
     //Note: JSON.parse wont return the exact User model.
 
@@ -84,7 +84,7 @@ export class AuthService {
       userData.email,
       userData.id,
       userData._token,
-      new Date(userData._tokenExpirationData)
+      new Date(userData._tokenExpirationDate)
     );
 
     //in token getter we check whether token has expired
@@ -92,7 +92,7 @@ export class AuthService {
     if (loadedUser.token) {
       this.userSubject.next(loadedUser);
       const expirationDuration =
-        new Date(userData._tokenExpirationData).getTime() -
+        new Date(userData._tokenExpirationDate).getTime() -
         new Date().getTime();
       this.autoLogout(expirationDuration);
     }

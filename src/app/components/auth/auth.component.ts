@@ -13,7 +13,7 @@ import { PlaceHolderDirective } from 'src/app/shared/placeholder.directive';
 import {
   AuthResponseData,
   AuthService,
-} from 'src/app/shared/services/auth.service';
+} from 'src/app/components/auth/auth.service';
 
 @Component({
   selector: 'app-auth',
